@@ -28,6 +28,7 @@ DEFAULT_SCOPES_MAP: Final = {
 WRITE_SCOPES_MAP: Final = {
     "roms.write": "Modify ROMs",
     "platforms.write": "Modify platforms",
+    "api.write": "Modify API tokens",
 }
 
 FULL_SCOPES_MAP: Final = {
