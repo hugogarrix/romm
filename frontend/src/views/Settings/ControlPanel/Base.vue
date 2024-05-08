@@ -23,7 +23,7 @@ const tab = ref("general");
         >Config</v-tab
       >
       <v-tab
-        v-if="auth.scopes.includes('api.edit')"
+        v-if="auth.scopes.includes('api.write')"
         value="api"
         rounded="0"
         >API</v-tab
