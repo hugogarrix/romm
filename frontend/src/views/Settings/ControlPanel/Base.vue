@@ -4,6 +4,7 @@ import storeHeartbeat from "@/stores/heartbeat";
 import ControlPanelConfig from "@/views/Settings/ControlPanel/Config/Base.vue";
 import ControlPanelGeneral from "@/views/Settings/ControlPanel/General/Base.vue";
 import ControlPanelUsers from "@/views/Settings/ControlPanel/Users/Base.vue";
+import ControlPanelApi from "@/views/Settings/ControlPanel/Api/Base.vue";
 import { ref } from "vue";
 
 // Props
@@ -22,6 +23,12 @@ const tab = ref("general");
         >Config</v-tab
       >
       <v-tab
+        v-if="auth.scopes.includes('api.edit')"
+        value="api"
+        rounded="0"
+        >API</v-tab
+      >
+      <v-tab
         v-if="auth.scopes.includes('users.write')"
         value="users"
         rounded="0"
@@ -38,6 +45,10 @@ const tab = ref("general");
 
     <v-window-item value="config">
       <control-panel-config />
+    </v-window-item>
+
+    <v-window-item value="api">
+      <control-panel-api />
     </v-window-item>
 
     <v-window-item value="users">
